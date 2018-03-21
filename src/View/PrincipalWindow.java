@@ -19,6 +19,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 import javax.swing.Timer;
 /**
  *
@@ -58,7 +59,9 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
                     temp2.setBackground(Color.PINK);
                     contadorAbiertos = panel_juego.getCasillasAbiertas();
                     if(numeroCasillas-contadorMinas  == contadorAbiertos){
+                        panel_juego.colorearDemasMinasWIN();
                         javax.swing.JOptionPane.showMessageDialog(this, "Wow ganaste *aplausos*");
+                      
                         juegoTerminado = true;
                     }
                 }
@@ -137,7 +140,7 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(lblCantidadMinas, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(botonComienzo))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(280, Short.MAX_VALUE))
         );
         cabeceraLayout.setVerticalGroup(
             cabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,22 +159,23 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panel_juego.setLayout(new java.awt.GridLayout());
+        panel_juego.setLayout(new java.awt.GridLayout(1, 0));
 
         javax.swing.GroupLayout plano1Layout = new javax.swing.GroupLayout(plano1);
         plano1.setLayout(plano1Layout);
         plano1Layout.setHorizontalGroup(
             plano1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(plano1Layout.createSequentialGroup()
-                .addComponent(panel_juego, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plano1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panel_juego, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         plano1Layout.setVerticalGroup(
             plano1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(plano1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panel_juego, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plano1Layout.createSequentialGroup()
+                .addContainerGap(28, Short.MAX_VALUE)
+                .addComponent(panel_juego, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -271,6 +275,7 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
                 }
                 
                 panel_juego.getMatrix()[i+1][j+1].setVisible(true);
+                
                 panel_juego.getMatrix()[i+1][j+1].setFont(new Font("Arial", Font.PLAIN, 10));
                
                 panel_juego.add(panel_juego.getMatrix()[i+1][j+1]);

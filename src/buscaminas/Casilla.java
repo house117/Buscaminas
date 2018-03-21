@@ -11,11 +11,13 @@ import javax.swing.JButton;
  */
 public class Casilla extends JButton{
     private Boolean mina;
+    private Boolean flageada; //Para verificar si esta marcada como mina o no.
     private Boolean abierta = false; //Para verificar si esta abierto 
                              //o cerrado, true = abierto, false = cerrado
     private Integer minasAlrededor = 0; //contendra el numero de minas que tiene alrededor
     private Integer i;
     private Integer j;
+
             
     public Casilla(){
         super();

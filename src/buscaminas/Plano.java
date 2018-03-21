@@ -10,6 +10,13 @@ package buscaminas;
  * @author House
  */
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.net.URL;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 public class Plano extends JPanel{
     private Casilla[][] matrix;
@@ -28,32 +35,44 @@ public class Plano extends JPanel{
             matrix[i][0] = new Casilla();
             matrix[i][0].setAbierto(true);
             matrix[i][0].setMina(false);
+            matrix[i][col-1] = new Casilla();
+            matrix[i][col-1].setAbierto(true);
+            matrix[i][col-1].setMina(false);
+
+        }
+        for(int i=0; i<col; i++){
             matrix[0][i] = new Casilla();
             matrix[0][i].setAbierto(true);
             matrix[0][i].setMina(false);
             matrix[fil-1][i] = new Casilla();
             matrix[fil-1][i].setAbierto(true);
             matrix[fil-1][i].setMina(false);
-             matrix[i][col-1] = new Casilla();
-            matrix[i][col-1].setAbierto(true);
-            matrix[i][col-1].setMina(false);
+
         }
       
     }
      public void colorearDemasMinas(){
+         ImageIcon saveImage = new ImageIcon("C:\\Users\\House\\Documents\\UNIVERSIDAD\\JavaPrograms\\Buscaminas\\resources\\minemine.png");
+         Icon icono;
         for(int i=0; i<this.fil-2; i++){
             for(int j=0; j<this.col-2; j++){
                 if(matrix[i+1][j+1].tieneMina()){
-                    matrix[i+1][j+1].setBackground(Color.BLACK);  
+                    icono = new ImageIcon(saveImage.getImage().getScaledInstance(matrix[i+1][j+1].getWidth()/2, 
+                            matrix[i+1][j+1].getHeight()/2, Image.SCALE_DEFAULT));
+                    matrix[i+1][j+1].setIcon(icono);
+                    matrix[i+1][j+1].setBackground(Color.BLACK); 
+                    
                 }
             }
         }
     }
     public void colorearDemasMinasWIN(){
+        ImageIcon saveImage = new ImageIcon("C:\\Users\\House\\Documents\\UNIVERSIDAD\\JavaPrograms\\Buscaminas\\resources\\minemine.png");
         for(int i=0; i<this.fil-2; i++){
             for(int j=0; j<this.col-2; j++){
                 if(matrix[i+1][j+1].tieneMina()){
-                    matrix[i+1][j+1].setBackground(Color.BLUE);  
+                    matrix[i+1][j+1].setBackground(Color.BLUE); 
+                    matrix[i+1][j+1].setIcon(saveImage);
                 }
             }
         }
