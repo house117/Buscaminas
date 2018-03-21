@@ -67,12 +67,15 @@ public class Plano extends JPanel{
         }
     }
     public void colorearDemasMinasWIN(){
-        ImageIcon saveImage = new ImageIcon("C:\\Users\\House\\Documents\\UNIVERSIDAD\\JavaPrograms\\Buscaminas\\resources\\minemine.png");
+         ImageIcon saveImage = new ImageIcon("C:\\Users\\House\\Documents\\UNIVERSIDAD\\JavaPrograms\\Buscaminas\\resources\\minemine.png");
+         Icon icono;
         for(int i=0; i<this.fil-2; i++){
             for(int j=0; j<this.col-2; j++){
                 if(matrix[i+1][j+1].tieneMina()){
+                    icono = new ImageIcon(saveImage.getImage().getScaledInstance(matrix[i+1][j+1].getWidth()/2, 
+                    matrix[i+1][j+1].getHeight()/2, Image.SCALE_DEFAULT));
+                    matrix[i+1][j+1].setIcon(icono);
                     matrix[i+1][j+1].setBackground(Color.BLUE); 
-                    matrix[i+1][j+1].setIcon(saveImage);
                 }
             }
         }
