@@ -22,7 +22,7 @@ public class Casilla extends JButton{
     public Casilla(){
         super();
         Double random = Math.random();
-        if(random > 0.8) //probabilidad de que tenga mina
+        if(random > 0.9) //probabilidad de que tenga mina
             mina = true;
         else
             mina = false;

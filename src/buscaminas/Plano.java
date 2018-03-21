@@ -11,6 +11,7 @@ package buscaminas;
  */
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
@@ -121,6 +122,7 @@ public class Plano extends JPanel{
                             matrix[actual.getI()+F[m]][actual.getJ()+C[m]].setBackground(Color.PINK);
                             matrix[actual.getI()+F[m]][actual.getJ()+C[m]].setText(
                                     String.format("%d", matrix[actual.getI()+F[m]][actual.getJ()+C[m]].getMinasAlrededor()));
+                            matrix[actual.getI()+F[m]][actual.getJ()+C[m]].setFont(new Font("Arial", Font.PLAIN, 10));
                         }
                         if(matrix[i+F[m]][j+C[m]].getMinasAlrededor() == 0){
                             matrix[actual.getI()+F[m]][actual.getJ()+C[m]].setAbierto(true);

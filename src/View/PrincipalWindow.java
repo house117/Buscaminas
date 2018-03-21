@@ -53,6 +53,7 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
                     temp2.setAbierto(true);
                     if(temp2.getMinasAlrededor() != 0){
                         temp2.setText(String.format("%d", temp2.getMinasAlrededor()));
+                        temp2.setFont(new Font("Arial", Font.PLAIN, 10));
                     }else{
                         panel_juego.descubrirMinasVacias(temp2);
                     }
@@ -140,7 +141,7 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(lblCantidadMinas, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(botonComienzo))
-                .addContainerGap(280, Short.MAX_VALUE))
+                .addContainerGap(246, Short.MAX_VALUE))
         );
         cabeceraLayout.setVerticalGroup(
             cabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,7 +168,7 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
             plano1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plano1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panel_juego, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panel_juego, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         plano1Layout.setVerticalGroup(
@@ -276,7 +277,6 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
                 
                 panel_juego.getMatrix()[i+1][j+1].setVisible(true);
                 
-                panel_juego.getMatrix()[i+1][j+1].setFont(new Font("Arial", Font.PLAIN, 10));
                
                 panel_juego.add(panel_juego.getMatrix()[i+1][j+1]);
                 
