@@ -53,7 +53,7 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
                     temp2.setAbierto(true);
                     if(temp2.getMinasAlrededor() != 0){
                         temp2.setText(String.format("%d", temp2.getMinasAlrededor()));
-                        temp2.setFont(new Font("Arial", Font.PLAIN, 10));
+                        temp2.setFont(new Font("Comic Sans MS", Font.PLAIN, 8));
                     }else{
                         panel_juego.descubrirMinasVacias(temp2);
                     }
@@ -94,6 +94,9 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
         lblCantidadMinas = new javax.swing.JLabel();
         plano1 = new buscaminas.Plano();
         panel_juego = new buscaminas.Plano();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -141,7 +144,7 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(lblCantidadMinas, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(botonComienzo))
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addContainerGap(388, Short.MAX_VALUE))
         );
         cabeceraLayout.setVerticalGroup(
             cabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,16 +171,24 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
             plano1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plano1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panel_juego, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panel_juego, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         plano1Layout.setVerticalGroup(
             plano1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plano1Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
-                .addComponent(panel_juego, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE)
+                .addComponent(panel_juego, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(11, Short.MAX_VALUE))
         );
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -293,6 +304,9 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
     private javax.swing.JPanel cabecera;
     private javax.swing.JTextField columnas;
     private javax.swing.JTextField filas;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel lblCantidadMinas;
     private javax.swing.JLabel lblColumnas;
     private javax.swing.JLabel lblFilas;

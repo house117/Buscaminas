@@ -20,6 +20,7 @@ public class Buscaminas {
         // TODO code application logic here
         PrincipalWindow v = new PrincipalWindow();
         v.setVisible(true);
+        v.setResizable(false); 
     }
     
 }
